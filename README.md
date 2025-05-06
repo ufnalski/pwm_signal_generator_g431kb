@@ -7,6 +7,8 @@ If you don't have a bench PWM signal generator, build one. Take an inspiration f
 ![Audi A4 (B6) throttle body](/Assets/Images/audi_a4_b6_throttle_body.jpg)
 ![Audi A4 (B6) throttle body closed](/Assets/Images/audi_a4_b6_throttle_body_closed.jpg)
 ![Audi A4 (B6) throttle body open](/Assets/Images/audi_a4_b6_throttle_body_open.jpg)
+![BMW F60 coolant pump PWM (Bosch PCE)](/Assets/Images/pwm_signal_generator_pce.jpg)
+![BMW Countryman (F60) coolant pump](/Assets/Images/bmw_f60_coolant_pump.jpg)
 
 # Missing files?
 Don't worry :slightly_smiling_face: Just hit Alt-K to generate /Drivers/CMCIS/ and /Drivers/STM32G4xx_HAL_Driver/ based on the .ioc file. After a couple of seconds your project will be ready for building.
@@ -18,6 +20,10 @@ Don't worry :slightly_smiling_face: Just hit Alt-K to generate /Drivers/CMCIS/ a
 * [Drive By Wire - Electronic Throttle Control - Explained](https://www.youtube.com/watch?v=Pgln9L5Y7sQ) (Engineering Explained)
 * [Drive By Wire With PWM / Audi A4 1.8T Throttle Body](https://www.youtube.com/watch?v=h1aA5gfeU34) (0033mer)
 * [Pierburg CWA400 water pump [PWM version]](https://tecomotive.com/download/datasheets/CWA400_PWM_EN.pdf)
+* [Bosch PCE coolant pumps [PWM version]](https://openinverter.org/wiki/Bosch_PCE_Coolant_Pumps)
+
+# What's inside the Bosch PCE circulation pump?
+Coming soon :soon:
 
 # What next?
 I challenge you to develop a closed-loop control of a butterfly valve :sunglasses:

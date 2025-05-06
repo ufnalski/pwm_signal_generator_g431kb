@@ -35,8 +35,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 //#define DRONE_ESC_PRESETS
-#define SG90_SERVO_PRESETS
+//#define SG90_SERVO_PRESETS
 //#define THROTTLE_BODY_PRESETS
+#define COOLANT_PUMP_PRESETS
 
 #define OLED_REFRESH_RATE 200
 
@@ -59,6 +60,7 @@
 #define PRESETS_NAME "  Drone ESC presets"
 #endif
 
+// https://www.upesy.com/blogs/tutorials/esp32-servo-motor-sg90-on-micropython
 #ifdef SG90_SERVO_PRESETS
 // Left button (blue)
 #define FREQUENCY_PRESET_1 50
@@ -77,6 +79,7 @@
 #define PRESETS_NAME "  SG90 servo presets"
 #endif
 
+// https://www.bosch-motorsport.com/content/downloads/Raceparts/en-GB/51017995147518219.html
 #ifdef THROTTLE_BODY_PRESETS
 // Left button (blue)
 #define FREQUENCY_PRESET_1 2000
@@ -93,6 +96,25 @@
 // Initial frequency
 #define INIT_FREQ 2000
 #define PRESETS_NAME "Throttle body presets"
+#endif
+
+// https://openinverter.org/wiki/Bosch_PCE_Coolant_Pumps
+#ifdef COOLANT_PUMP_PRESETS
+// Left button (blue)
+#define FREQUENCY_PRESET_1 100
+#define DUTY_CYCLE_PRESET_1 0
+// Right button (white)
+#define FREQUENCY_PRESET_2 100
+#define DUTY_CYCLE_PRESET_2 100
+// Left encoder knob
+#define FREQUENCY_PRESET_3 100
+#define DUTY_CYCLE_PRESET_3 10
+// Right encoder knob
+#define FREQUENCY_PRESET_4 100
+#define DUTY_CYCLE_PRESET_4 50
+// Initial frequency
+#define INIT_FREQ 100
+#define PRESETS_NAME " Coolant pump presets"
 #endif
 /* USER CODE END PD */
 
@@ -292,11 +314,11 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 		}
 		else
 		{
-			if (pwm_freq >= 2000)
+			if (pwm_freq >= 1500)
 			{
 				pwm_freq -= 500;
 			}
-			else if (pwm_freq >= 200)
+			else if (pwm_freq >= 150)
 			{
 				pwm_freq -= 50;
 			}
